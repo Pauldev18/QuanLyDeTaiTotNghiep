@@ -9,5 +9,5 @@ D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.cspr
 D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.csproj.CoreCompileInputs.cache
 D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.exe
 D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.pdb
-D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.Form1.resources
 D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.LapLichBaoVe.resources
+D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.ManHinhChinh.resources

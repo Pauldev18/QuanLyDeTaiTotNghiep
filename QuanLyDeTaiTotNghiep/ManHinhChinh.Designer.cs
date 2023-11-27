@@ -1,6 +1,6 @@
 ﻿namespace QuanLyDeTaiTotNghiep
 {
-    partial class Form1
+    partial class ManHinhChinh
     {
         /// <summary>
         /// Required designer variable.
@@ -87,12 +87,12 @@
             this.pnl_trangchu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_trangchu.Location = new System.Drawing.Point(0, 46);
+            this.pnl_trangchu.Location = new System.Drawing.Point(0, 27);
             this.pnl_trangchu.Name = "pnl_trangchu";
-            this.pnl_trangchu.Size = new System.Drawing.Size(800, 404);
+            this.pnl_trangchu.Size = new System.Drawing.Size(800, 423);
             this.pnl_trangchu.TabIndex = 1;
             // 
-            // Form1
+            // ManHinhChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -100,7 +100,7 @@
             this.Controls.Add(this.pnl_trangchu);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "ManHinhChinh";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

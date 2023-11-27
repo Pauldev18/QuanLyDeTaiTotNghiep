@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLdeTaiDoAnTotNghiep" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-TALNCQS;Initial Catalog=QLdeTaiDoAnTotNghiep;User ID=sa" SettingsObjectName="QuanLyDeTaiTotNghiep.Properties.Settings" SettingsPropertyName="QLdeTaiDoAnTotNghiepConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DeTaiDoAn" Member="DeTaiDoAns">
+    <Type Name="DeTaiDoAn">
+      <Column Name="id_detai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ten_detai" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="id_khoa" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DeTaiDoAn_SinhVien" Member="SinhViens" ThisKey="id_detai" OtherKey="id_detai" Type="SinhVien" />
+      <Association Name="DeTaiDoAn_LichBaoVe" Member="LichBaoVes" ThisKey="id_detai" OtherKey="id_detai" Type="LichBaoVe" />
+      <Association Name="Khoa_DeTaiDoAn" Member="Khoa" ThisKey="id_khoa" OtherKey="id_khoa" Type="Khoa" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SinhVien" Member="SinhViens">
+    <Type Name="SinhVien">
+      <Column Name="id_sinhvien" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ho_ten" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="lop" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ma_sv" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="diem" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="id_detai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DeTaiDoAn_SinhVien" Member="DeTaiDoAn" ThisKey="id_detai" OtherKey="id_detai" Type="DeTaiDoAn" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GiangVien" Member="GiangViens">
+    <Type Name="GiangVien">
+      <Column Name="id_giangvien" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ten_giangvien" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ma_giangvien" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="GiangVien_HoiDongBaoVe_GiangVien" Member="HoiDongBaoVe_GiangViens" ThisKey="id_giangvien" OtherKey="id_giangvien" Type="HoiDongBaoVe_GiangVien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HoiDongBaoVe" Member="HoiDongBaoVes">
+    <Type Name="HoiDongBaoVe">
+      <Column Name="id_hoidong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ten_hoidong" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="HoiDongBaoVe_HoiDongBaoVe_GiangVien" Member="HoiDongBaoVe_GiangViens" ThisKey="id_hoidong" OtherKey="id_hoidong" Type="HoiDongBaoVe_GiangVien" />
+      <Association Name="HoiDongBaoVe_LichBaoVe" Member="LichBaoVes" ThisKey="id_hoidong" OtherKey="id_hoidong" Type="LichBaoVe" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HoiDongBaoVe_GiangVien" Member="HoiDongBaoVe_GiangViens">
+    <Type Name="HoiDongBaoVe_GiangVien">
+      <Column Name="id_HoiDongBaoVe_GiangVien" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_hoidong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_giangvien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="GiangVien_HoiDongBaoVe_GiangVien" Member="GiangVien" ThisKey="id_giangvien" OtherKey="id_giangvien" Type="GiangVien" IsForeignKey="true" />
+      <Association Name="HoiDongBaoVe_HoiDongBaoVe_GiangVien" Member="HoiDongBaoVe" ThisKey="id_hoidong" OtherKey="id_hoidong" Type="HoiDongBaoVe" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Khoa" Member="Khoas">
+    <Type Name="Khoa">
+      <Column Name="id_khoa" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nam" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="Khoa_DeTaiDoAn" Member="DeTaiDoAns" ThisKey="id_khoa" OtherKey="id_khoa" Type="DeTaiDoAn" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LichBaoVe" Member="LichBaoVes">
+    <Type Name="LichBaoVe">
+      <Column Name="id_lich" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="phong" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="gio" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="id_hoidong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_detai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DeTaiDoAn_LichBaoVe" Member="DeTaiDoAn" ThisKey="id_detai" OtherKey="id_detai" Type="DeTaiDoAn" IsForeignKey="true" />
+      <Association Name="HoiDongBaoVe_LichBaoVe" Member="HoiDongBaoVe" ThisKey="id_hoidong" OtherKey="id_hoidong" Type="HoiDongBaoVe" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
