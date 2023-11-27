@@ -1,0 +1,11 @@
+D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\bin\Debug\QuanLyDeTaiTotNghiep.exe.config
+D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\bin\Debug\QuanLyDeTaiTotNghiep.exe
+D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\bin\Debug\QuanLyDeTaiTotNghiep.pdb
+D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.csproj.AssemblyReference.cache
+D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.csproj.SuggestedBindingRedirects.cache
+D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.Properties.Resources.resources
+D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.QuanLyDeTaics.resources
+D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.csproj.GenerateResource.cache
+D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.csproj.CoreCompileInputs.cache
+D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.exe
+D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.pdb
