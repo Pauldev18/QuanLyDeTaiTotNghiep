@@ -11,3 +11,6 @@ D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.exe
 D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.pdb
 D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.LapLichBaoVe.resources
 D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.ManHinhChinh.resources
+D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.CapNhatDiem.resources
+D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.ThongKe.resources
+D:\QuanLyDeTaiTotNghiep\QuanLyDeTaiTotNghiep\obj\Debug\QuanLyDeTaiTotNghiep.TimKiem.resources

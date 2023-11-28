@@ -16,7 +16,7 @@ namespace QuanLyDeTaiTotNghiep
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QuanLyDeTaics());
+            Application.Run(new ManHinhChinh());
         }
     }
 }

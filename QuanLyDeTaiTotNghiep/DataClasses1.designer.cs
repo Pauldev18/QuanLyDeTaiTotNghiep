@@ -150,13 +150,9 @@ namespace QuanLyDeTaiTotNghiep
 		
 		private string _ten_detai;
 		
-		private System.Nullable<int> _id_khoa;
-		
 		private EntitySet<SinhVien> _SinhViens;
 		
 		private EntitySet<LichBaoVe> _LichBaoVes;
-		
-		private EntityRef<Khoa> _Khoa;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -166,15 +162,12 @@ namespace QuanLyDeTaiTotNghiep
     partial void Onid_detaiChanged();
     partial void Onten_detaiChanging(string value);
     partial void Onten_detaiChanged();
-    partial void Onid_khoaChanging(System.Nullable<int> value);
-    partial void Onid_khoaChanged();
     #endregion
 		
 		public DeTaiDoAn()
 		{
 			this._SinhViens = new EntitySet<SinhVien>(new Action<SinhVien>(this.attach_SinhViens), new Action<SinhVien>(this.detach_SinhViens));
 			this._LichBaoVes = new EntitySet<LichBaoVe>(new Action<LichBaoVe>(this.attach_LichBaoVes), new Action<LichBaoVe>(this.detach_LichBaoVes));
-			this._Khoa = default(EntityRef<Khoa>);
 			OnCreated();
 		}
 		
@@ -218,30 +211,6 @@ namespace QuanLyDeTaiTotNghiep
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_khoa", DbType="Int")]
-		public System.Nullable<int> id_khoa
-		{
-			get
-			{
-				return this._id_khoa;
-			}
-			set
-			{
-				if ((this._id_khoa != value))
-				{
-					if (this._Khoa.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_khoaChanging(value);
-					this.SendPropertyChanging();
-					this._id_khoa = value;
-					this.SendPropertyChanged("id_khoa");
-					this.Onid_khoaChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DeTaiDoAn_SinhVien", Storage="_SinhViens", ThisKey="id_detai", OtherKey="id_detai")]
 		public EntitySet<SinhVien> SinhViens
 		{
@@ -265,40 +234,6 @@ namespace QuanLyDeTaiTotNghiep
 			set
 			{
 				this._LichBaoVes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Khoa_DeTaiDoAn", Storage="_Khoa", ThisKey="id_khoa", OtherKey="id_khoa", IsForeignKey=true)]
-		public Khoa Khoa
-		{
-			get
-			{
-				return this._Khoa.Entity;
-			}
-			set
-			{
-				Khoa previousValue = this._Khoa.Entity;
-				if (((previousValue != value) 
-							|| (this._Khoa.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Khoa.Entity = null;
-						previousValue.DeTaiDoAns.Remove(this);
-					}
-					this._Khoa.Entity = value;
-					if ((value != null))
-					{
-						value.DeTaiDoAns.Add(this);
-						this._id_khoa = value.id_khoa;
-					}
-					else
-					{
-						this._id_khoa = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Khoa");
-				}
 			}
 		}
 		
@@ -365,7 +300,11 @@ namespace QuanLyDeTaiTotNghiep
 		
 		private System.Nullable<int> _id_detai;
 		
+		private System.Nullable<int> _id_khoa;
+		
 		private EntityRef<DeTaiDoAn> _DeTaiDoAn;
+		
+		private EntityRef<Khoa> _Khoa;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -383,11 +322,14 @@ namespace QuanLyDeTaiTotNghiep
     partial void OndiemChanged();
     partial void Onid_detaiChanging(System.Nullable<int> value);
     partial void Onid_detaiChanged();
+    partial void Onid_khoaChanging(System.Nullable<int> value);
+    partial void Onid_khoaChanged();
     #endregion
 		
 		public SinhVien()
 		{
 			this._DeTaiDoAn = default(EntityRef<DeTaiDoAn>);
+			this._Khoa = default(EntityRef<Khoa>);
 			OnCreated();
 		}
 		
@@ -515,6 +457,30 @@ namespace QuanLyDeTaiTotNghiep
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_khoa", DbType="Int")]
+		public System.Nullable<int> id_khoa
+		{
+			get
+			{
+				return this._id_khoa;
+			}
+			set
+			{
+				if ((this._id_khoa != value))
+				{
+					if (this._Khoa.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_khoaChanging(value);
+					this.SendPropertyChanging();
+					this._id_khoa = value;
+					this.SendPropertyChanged("id_khoa");
+					this.Onid_khoaChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DeTaiDoAn_SinhVien", Storage="_DeTaiDoAn", ThisKey="id_detai", OtherKey="id_detai", IsForeignKey=true)]
 		public DeTaiDoAn DeTaiDoAn
 		{
@@ -545,6 +511,40 @@ namespace QuanLyDeTaiTotNghiep
 						this._id_detai = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("DeTaiDoAn");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Khoa_SinhVien", Storage="_Khoa", ThisKey="id_khoa", OtherKey="id_khoa", IsForeignKey=true)]
+		public Khoa Khoa
+		{
+			get
+			{
+				return this._Khoa.Entity;
+			}
+			set
+			{
+				Khoa previousValue = this._Khoa.Entity;
+				if (((previousValue != value) 
+							|| (this._Khoa.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Khoa.Entity = null;
+						previousValue.SinhViens.Remove(this);
+					}
+					this._Khoa.Entity = value;
+					if ((value != null))
+					{
+						value.SinhViens.Add(this);
+						this._id_khoa = value.id_khoa;
+					}
+					else
+					{
+						this._id_khoa = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Khoa");
 				}
 			}
 		}
@@ -1052,7 +1052,9 @@ namespace QuanLyDeTaiTotNghiep
 		
 		private string _nam;
 		
-		private EntitySet<DeTaiDoAn> _DeTaiDoAns;
+		private EntitySet<SinhVien> _SinhViens;
+		
+		private EntitySet<LichBaoVe> _LichBaoVes;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1066,7 +1068,8 @@ namespace QuanLyDeTaiTotNghiep
 		
 		public Khoa()
 		{
-			this._DeTaiDoAns = new EntitySet<DeTaiDoAn>(new Action<DeTaiDoAn>(this.attach_DeTaiDoAns), new Action<DeTaiDoAn>(this.detach_DeTaiDoAns));
+			this._SinhViens = new EntitySet<SinhVien>(new Action<SinhVien>(this.attach_SinhViens), new Action<SinhVien>(this.detach_SinhViens));
+			this._LichBaoVes = new EntitySet<LichBaoVe>(new Action<LichBaoVe>(this.attach_LichBaoVes), new Action<LichBaoVe>(this.detach_LichBaoVes));
 			OnCreated();
 		}
 		
@@ -1110,16 +1113,29 @@ namespace QuanLyDeTaiTotNghiep
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Khoa_DeTaiDoAn", Storage="_DeTaiDoAns", ThisKey="id_khoa", OtherKey="id_khoa")]
-		public EntitySet<DeTaiDoAn> DeTaiDoAns
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Khoa_SinhVien", Storage="_SinhViens", ThisKey="id_khoa", OtherKey="id_khoa")]
+		public EntitySet<SinhVien> SinhViens
 		{
 			get
 			{
-				return this._DeTaiDoAns;
+				return this._SinhViens;
 			}
 			set
 			{
-				this._DeTaiDoAns.Assign(value);
+				this._SinhViens.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Khoa_LichBaoVe", Storage="_LichBaoVes", ThisKey="id_khoa", OtherKey="id_khoa")]
+		public EntitySet<LichBaoVe> LichBaoVes
+		{
+			get
+			{
+				return this._LichBaoVes;
+			}
+			set
+			{
+				this._LichBaoVes.Assign(value);
 			}
 		}
 		
@@ -1143,13 +1159,25 @@ namespace QuanLyDeTaiTotNghiep
 			}
 		}
 		
-		private void attach_DeTaiDoAns(DeTaiDoAn entity)
+		private void attach_SinhViens(SinhVien entity)
 		{
 			this.SendPropertyChanging();
 			entity.Khoa = this;
 		}
 		
-		private void detach_DeTaiDoAns(DeTaiDoAn entity)
+		private void detach_SinhViens(SinhVien entity)
+		{
+			this.SendPropertyChanging();
+			entity.Khoa = null;
+		}
+		
+		private void attach_LichBaoVes(LichBaoVe entity)
+		{
+			this.SendPropertyChanging();
+			entity.Khoa = this;
+		}
+		
+		private void detach_LichBaoVes(LichBaoVe entity)
 		{
 			this.SendPropertyChanging();
 			entity.Khoa = null;
@@ -1174,9 +1202,13 @@ namespace QuanLyDeTaiTotNghiep
 		
 		private System.Nullable<int> _id_detai;
 		
+		private System.Nullable<int> _id_khoa;
+		
 		private EntityRef<DeTaiDoAn> _DeTaiDoAn;
 		
 		private EntityRef<HoiDongBaoVe> _HoiDongBaoVe;
+		
+		private EntityRef<Khoa> _Khoa;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1194,12 +1226,15 @@ namespace QuanLyDeTaiTotNghiep
     partial void Onid_hoidongChanged();
     partial void Onid_detaiChanging(System.Nullable<int> value);
     partial void Onid_detaiChanged();
+    partial void Onid_khoaChanging(System.Nullable<int> value);
+    partial void Onid_khoaChanged();
     #endregion
 		
 		public LichBaoVe()
 		{
 			this._DeTaiDoAn = default(EntityRef<DeTaiDoAn>);
 			this._HoiDongBaoVe = default(EntityRef<HoiDongBaoVe>);
+			this._Khoa = default(EntityRef<Khoa>);
 			OnCreated();
 		}
 		
@@ -1331,6 +1366,30 @@ namespace QuanLyDeTaiTotNghiep
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_khoa", DbType="Int")]
+		public System.Nullable<int> id_khoa
+		{
+			get
+			{
+				return this._id_khoa;
+			}
+			set
+			{
+				if ((this._id_khoa != value))
+				{
+					if (this._Khoa.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_khoaChanging(value);
+					this.SendPropertyChanging();
+					this._id_khoa = value;
+					this.SendPropertyChanged("id_khoa");
+					this.Onid_khoaChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DeTaiDoAn_LichBaoVe", Storage="_DeTaiDoAn", ThisKey="id_detai", OtherKey="id_detai", IsForeignKey=true)]
 		public DeTaiDoAn DeTaiDoAn
 		{
@@ -1395,6 +1454,40 @@ namespace QuanLyDeTaiTotNghiep
 						this._id_hoidong = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("HoiDongBaoVe");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Khoa_LichBaoVe", Storage="_Khoa", ThisKey="id_khoa", OtherKey="id_khoa", IsForeignKey=true)]
+		public Khoa Khoa
+		{
+			get
+			{
+				return this._Khoa.Entity;
+			}
+			set
+			{
+				Khoa previousValue = this._Khoa.Entity;
+				if (((previousValue != value) 
+							|| (this._Khoa.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Khoa.Entity = null;
+						previousValue.LichBaoVes.Remove(this);
+					}
+					this._Khoa.Entity = value;
+					if ((value != null))
+					{
+						value.LichBaoVes.Add(this);
+						this._id_khoa = value.id_khoa;
+					}
+					else
+					{
+						this._id_khoa = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Khoa");
 				}
 			}
 		}

@@ -4,10 +4,8 @@
     <Type Name="DeTaiDoAn">
       <Column Name="id_detai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ten_detai" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
-      <Column Name="id_khoa" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="DeTaiDoAn_SinhVien" Member="SinhViens" ThisKey="id_detai" OtherKey="id_detai" Type="SinhVien" />
       <Association Name="DeTaiDoAn_LichBaoVe" Member="LichBaoVes" ThisKey="id_detai" OtherKey="id_detai" Type="LichBaoVe" />
-      <Association Name="Khoa_DeTaiDoAn" Member="Khoa" ThisKey="id_khoa" OtherKey="id_khoa" Type="Khoa" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.SinhVien" Member="SinhViens">
@@ -18,7 +16,9 @@
       <Column Name="ma_sv" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="diem" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="id_detai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_khoa" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="DeTaiDoAn_SinhVien" Member="DeTaiDoAn" ThisKey="id_detai" OtherKey="id_detai" Type="DeTaiDoAn" IsForeignKey="true" />
+      <Association Name="Khoa_SinhVien" Member="Khoa" ThisKey="id_khoa" OtherKey="id_khoa" Type="Khoa" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.GiangVien" Member="GiangViens">
@@ -50,7 +50,8 @@
     <Type Name="Khoa">
       <Column Name="id_khoa" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="nam" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Association Name="Khoa_DeTaiDoAn" Member="DeTaiDoAns" ThisKey="id_khoa" OtherKey="id_khoa" Type="DeTaiDoAn" />
+      <Association Name="Khoa_SinhVien" Member="SinhViens" ThisKey="id_khoa" OtherKey="id_khoa" Type="SinhVien" />
+      <Association Name="Khoa_LichBaoVe" Member="LichBaoVes" ThisKey="id_khoa" OtherKey="id_khoa" Type="LichBaoVe" />
     </Type>
   </Table>
   <Table Name="dbo.LichBaoVe" Member="LichBaoVes">
@@ -61,8 +62,10 @@
       <Column Name="gio" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
       <Column Name="id_hoidong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="id_detai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_khoa" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="DeTaiDoAn_LichBaoVe" Member="DeTaiDoAn" ThisKey="id_detai" OtherKey="id_detai" Type="DeTaiDoAn" IsForeignKey="true" />
       <Association Name="HoiDongBaoVe_LichBaoVe" Member="HoiDongBaoVe" ThisKey="id_hoidong" OtherKey="id_hoidong" Type="HoiDongBaoVe" IsForeignKey="true" />
+      <Association Name="Khoa_LichBaoVe" Member="Khoa" ThisKey="id_khoa" OtherKey="id_khoa" Type="Khoa" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

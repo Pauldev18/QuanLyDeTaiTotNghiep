@@ -33,21 +33,21 @@
             this.button1 = new System.Windows.Forms.Button();
             this.cbx_khoaHoc = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbx2_khoaHoc = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txt_lop = new System.Windows.Forms.RichTextBox();
             this.txt_maSinhVien = new System.Windows.Forms.RichTextBox();
             this.txt_tenSinhVien = new System.Windows.Forms.RichTextBox();
-            this.txt_tenDeTai = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataDeTai = new System.Windows.Forms.DataGridView();
-            this.cbx2_khoaHoc = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.cbx_deTai = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -96,6 +96,7 @@
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.cbx_deTai);
             this.splitContainer2.Panel2.Controls.Add(this.label7);
             this.splitContainer2.Panel2.Controls.Add(this.cbx2_khoaHoc);
             this.splitContainer2.Panel2.Controls.Add(this.button4);
@@ -104,7 +105,6 @@
             this.splitContainer2.Panel2.Controls.Add(this.txt_lop);
             this.splitContainer2.Panel2.Controls.Add(this.txt_maSinhVien);
             this.splitContainer2.Panel2.Controls.Add(this.txt_tenSinhVien);
-            this.splitContainer2.Panel2.Controls.Add(this.txt_tenDeTai);
             this.splitContainer2.Panel2.Controls.Add(this.label5);
             this.splitContainer2.Panel2.Controls.Add(this.label4);
             this.splitContainer2.Panel2.Controls.Add(this.label3);
@@ -142,6 +142,26 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Niên khóa";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.Location = new System.Drawing.Point(22, 254);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(99, 24);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Niên Khóa";
+            // 
+            // cbx2_khoaHoc
+            // 
+            this.cbx2_khoaHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbx2_khoaHoc.FormattingEnabled = true;
+            this.cbx2_khoaHoc.Location = new System.Drawing.Point(26, 281);
+            this.cbx2_khoaHoc.Name = "cbx2_khoaHoc";
+            this.cbx2_khoaHoc.Size = new System.Drawing.Size(174, 32);
+            this.cbx2_khoaHoc.TabIndex = 11;
+            this.cbx2_khoaHoc.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -151,6 +171,7 @@
             this.button4.TabIndex = 10;
             this.button4.Text = "Sửa";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -161,6 +182,7 @@
             this.button3.TabIndex = 9;
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -196,14 +218,6 @@
             this.txt_tenSinhVien.Size = new System.Drawing.Size(176, 30);
             this.txt_tenSinhVien.TabIndex = 5;
             this.txt_tenSinhVien.Text = "";
-            // 
-            // txt_tenDeTai
-            // 
-            this.txt_tenDeTai.Location = new System.Drawing.Point(25, 42);
-            this.txt_tenDeTai.Name = "txt_tenDeTai";
-            this.txt_tenDeTai.Size = new System.Drawing.Size(176, 29);
-            this.txt_tenDeTai.TabIndex = 4;
-            this.txt_tenDeTai.Text = "";
             // 
             // label5
             // 
@@ -269,26 +283,16 @@
             this.dataDeTai.Name = "dataDeTai";
             this.dataDeTai.Size = new System.Drawing.Size(655, 519);
             this.dataDeTai.TabIndex = 0;
+            this.dataDeTai.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataDeTai_CellClick);
             // 
-            // cbx2_khoaHoc
+            // cbx_deTai
             // 
-            this.cbx2_khoaHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbx2_khoaHoc.FormattingEnabled = true;
-            this.cbx2_khoaHoc.Location = new System.Drawing.Point(26, 281);
-            this.cbx2_khoaHoc.Name = "cbx2_khoaHoc";
-            this.cbx2_khoaHoc.Size = new System.Drawing.Size(174, 32);
-            this.cbx2_khoaHoc.TabIndex = 11;
-            this.cbx2_khoaHoc.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(22, 254);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 24);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Niên Khóa";
+            this.cbx_deTai.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbx_deTai.FormattingEnabled = true;
+            this.cbx_deTai.Location = new System.Drawing.Point(26, 43);
+            this.cbx_deTai.Name = "cbx_deTai";
+            this.cbx_deTai.Size = new System.Drawing.Size(175, 32);
+            this.cbx_deTai.TabIndex = 13;
             // 
             // QuanLyDeTaics
             // 
@@ -325,7 +329,6 @@
         private System.Windows.Forms.ComboBox cbx_khoaHoc;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox txt_tenSinhVien;
-        private System.Windows.Forms.RichTextBox txt_tenDeTai;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -338,5 +341,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbx2_khoaHoc;
+        private System.Windows.Forms.ComboBox cbx_deTai;
     }
 }

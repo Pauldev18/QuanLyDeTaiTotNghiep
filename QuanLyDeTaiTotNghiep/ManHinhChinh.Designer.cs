@@ -57,30 +57,35 @@
             this.quảnLíĐềTàiToolStripMenuItem.Name = "quảnLíĐềTàiToolStripMenuItem";
             this.quảnLíĐềTàiToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.quảnLíĐềTàiToolStripMenuItem.Text = "Quản Lí Đề Tài";
+            this.quảnLíĐềTàiToolStripMenuItem.Click += new System.EventHandler(this.quảnLíĐềTàiToolStripMenuItem_Click);
             // 
             // lậpLịchBảoVệToolStripMenuItem
             // 
             this.lậpLịchBảoVệToolStripMenuItem.Name = "lậpLịchBảoVệToolStripMenuItem";
             this.lậpLịchBảoVệToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
             this.lậpLịchBảoVệToolStripMenuItem.Text = "Lập Lịch Bảo Vệ ";
+            this.lậpLịchBảoVệToolStripMenuItem.Click += new System.EventHandler(this.lậpLịchBảoVệToolStripMenuItem_Click);
             // 
             // tìmKiếmToolStripMenuItem
             // 
             this.tìmKiếmToolStripMenuItem.Name = "tìmKiếmToolStripMenuItem";
             this.tìmKiếmToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.tìmKiếmToolStripMenuItem.Text = "Tìm Kiếm";
+            this.tìmKiếmToolStripMenuItem.Click += new System.EventHandler(this.tìmKiếmToolStripMenuItem_Click);
             // 
             // thốngKêToolStripMenuItem
             // 
             this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
             this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.thốngKêToolStripMenuItem.Text = "Thống Kê";
+            this.thốngKêToolStripMenuItem.Click += new System.EventHandler(this.thốngKêToolStripMenuItem_Click);
             // 
             // cậpNhậpĐiểmToolStripMenuItem
             // 
             this.cậpNhậpĐiểmToolStripMenuItem.Name = "cậpNhậpĐiểmToolStripMenuItem";
             this.cậpNhậpĐiểmToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
             this.cậpNhậpĐiểmToolStripMenuItem.Text = "Cập Nhập Điểm";
+            this.cậpNhậpĐiểmToolStripMenuItem.Click += new System.EventHandler(this.cậpNhậpĐiểmToolStripMenuItem_Click);
             // 
             // pnl_trangchu
             // 
@@ -91,6 +96,7 @@
             this.pnl_trangchu.Name = "pnl_trangchu";
             this.pnl_trangchu.Size = new System.Drawing.Size(800, 423);
             this.pnl_trangchu.TabIndex = 1;
+            this.pnl_trangchu.Resize += new System.EventHandler(this.pnl_trangchu_Resize);
             // 
             // ManHinhChinh
             // 
